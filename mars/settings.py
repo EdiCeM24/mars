@@ -44,6 +44,40 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'edibro.apps.EdibroConfig',
+    
+    'allauth',
+    'allauth.account',
+    # Optional -- requires install using `django-allauth[socialaccount]`.
+    'allauth.socialaccount',
+
+     'allauth.socialaccount.providers.google',
+     'allauth.socialaccount.providers.github',
+]
+
+SITE_ID = 1
+
+# Provider specific settings
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': '123',
+            'secret': '456',
+            'key': ''
+        }
+    }
+}
+
+AUTHENTICATION_BACKENDS = [
+    
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by email
+    'allauth.account.auth_backends.AuthenticationBackend',
+    
 ]
 
 MIDDLEWARE = [
@@ -54,6 +88,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'mars.urls'
@@ -70,6 +105,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                 # `allauth` needs this from django
+                'django.template.context_processors.request',
             ],
         },
     },
