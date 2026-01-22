@@ -1,0 +1,86 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %} {% endblock title %}
+
+{% block content %}
+  <div class="modal fade services" id="staticServices" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-dark fw-semibold" id="staticBackdropLabel">My Services</h1>
+          <button type="button" class="btn-close fs-5 fw-bold text-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <strong class="sub-title">I love developing beautiful websites and mobile applications. Here are some of my services:</strong>
+          <div class="work-info">
+            <div>
+              <img src="{% static 'assets/sc-1.jpg' %}" alt="Photo">
+              <p>
+                Django source code of one of my projects.
+              </p>
+            </div>
+            <div>
+              <img src="{% static 'assets/sc-2.jpg' %}" alt="Photo">
+              <p>
+                Restful API source code on Node.js.
+              </p>
+            </div>
+            <div>
+              <img src="{% static 'assets/sc-4.jpg' %}" alt="Photo">
+              <p>
+                React website source code.
+              </p>
+            </div>
+            <div>
+              <img src="{% static 'assets/sc-5.jpg' %}" alt="Photo">
+              <p>
+                Source code of a website.
+              </p>
+            </div>
+            <div>
+              <img src="{% static 'assets/sc-7.jpg' %}" alt="Photo">
+              <p>
+                Mobile app source code.
+              </p>
+            </div>
+            <div>
+              <img src="{% static 'assets/sc-8.jpg' %}" alt="Photo">
+              <p>
+                Source code of an app.
+              </p>
+            </div>
+          </div>
+          <div class="services-list">
+            <div>
+              <h2>Web Developer</h2>
+              <p>
+                Our web development service focuses on creating responsive, user-friendly websites that not only look stunning but also function seamlessly. We utilize the latest technologies to ensure your site is optimized for performance and conversion. Let us help you establish a strong online presence.
+              </p>
+              <a href="https://github.com/EdiCeM24">Learn More</a>
+            </div>
+            <div>
+              <h2>Mobile App Developer</h2>
+              <p>
+                The best and beautiful app has been a good way forward annd love turning a good ideas into a reality.
+              </p>
+              <a href="https://github.com/EdiCeM24">Learn More</a>
+            </div>
+            <div>
+              <h2>Instructor</h2>
+              <p>
+                We offer free online courses on various programming languages and technologies. We also provide mentorship to help you improve your skills.
+              </p>
+              <a href="https://youtube.com/@EdimarsMarcus">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

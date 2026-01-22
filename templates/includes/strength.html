@@ -1,0 +1,116 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="modal fade" id="staticStrengths" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title fs-5" id="staticBackdropLabel">
+          <h1 class="flex items-center justify-center text-xl font-semibold mt-8 mb-5">My Programming Abilities</h1>
+
+          <div class="w-full flex flex-col items-center justify-center"></div>
+                    
+        </div>
+        <button type="button" class="btn-close fs-5 fw-bold text-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="frontend-container p-5 m-4 bg-pink-500 rounded-md w-[80%] mr-[10%]">
+          <strong class="mb-4 text-xl font-semibold flex items-center justify-center">Frontend Development Tools</strong>
+          <div class="html-container flex items-center gap-1 w-full">
+            <label for="" class="text-html text-lg font-semibold">HTML5:</label>
+            <input type="range" name="range" id=range class="HTML w-[95%] text-teal-800" value="95%">
+            <span class="">95%</span>
+          </div>
+          <div class="css-container flex items-center gap-1">
+            <label for="" class="text-css text-lg font-semibold">CSS3:</label>
+            <input type="range" name="range" id=range class="CSS w-[85%]">
+            <span class="">85%</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <label for="" class="text-javascript text-lg font-semibold">JavaScript:</label>
+            <input type="range" name="range" id=range class="JAVASCRIPT w-[70%]">
+            <span class="">70%</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <label for="" class="text-typescript text-lg font-semibold">Typescript:</label>
+            <input type="range" name="range" id=range class="TYPESCRIPT w-[50%]">
+            <span class="">50%</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <label for="" class="text-react-js text-lg font-semibold">React.js:</label>
+            <input type="range" name="range" id=range class="REACT w-[60%]">
+            <span class="">60%</span>
+          </div>
+        </div>
+
+        <div class="p-5 m-4 bg-amber-300 rounded-md w-[80%] mr-[10%]">
+          <strong class="mb-4 text-xl font-semibold flex items-center justify-center">Backend Development Tools</strong>
+          <div class="flex items-center gap-1 w-full">
+            <label for="" class="text-python text-lg font-semibold">Python:</label>
+            <input type="range" name="range" id=range class="PYTHON w-[60%]">
+            <span class="">60%</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <label for="" class="text-node-js text-lg font-semibold">Node.js:</label>
+            <input type="range" name="range" id=range class="NODEJS w-[70%]">
+            <span class="">70%</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <label for="" class="text-django text-lg font-semibold">Django:</label>
+            <input type="range" name="range" id=range class="DJANGO w-[70%]">
+            <span class="">70%</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <label for="" class="text-flask text-lg font-semibold">Flask:</label>
+            <input type="range" name="range" id=range class="FLASK w-[60%]">
+            <span class="">60%</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <label for="" class="text-express-js text-lg font-semibold">Express:</label>
+            <input type="range" name="range" id=range class="EXPRESS-JS w-[70%]">
+            <span class="">70%</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <label for="" class="text-postgresql text-lg font-semibold">PostgreSQL:</label>
+            <input type="range" name="range" id=range class="POSTGRESQL w-[65%]">
+            <span class="">65%</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <label for="" class="text-mysql text-lg font-semibold">MySQL:</label>
+            <input type="range" name="range" id=range class="MYSQL w-[70%]">
+            <span class="">70%</span>
+          </div>
+          <div class="flex items-center gap-1">
+            <label for="" class="text-mongodb text-lg font-semibold">MongoDB:</label>
+            <input type="range" name="range" id=range class="MONGODB w-[75%]">
+            <span class="">75%</span>
+          </div>
+        </div>
+
+      <div class="p-5 m-4 bg-red-700 rounded-md w-[80%] mr-[10%]">
+        <strong class="mb-4 text-xl font-semibold flex items-center justify-center">Version Control System Tools</strong>
+        <div class="flex items-center gap-1">
+          <label for="" class="text-git text-lg font-semibold">Git:</label>
+          <input type="range" name="range" id=range class="GIT w-[70%]">
+          <span class="text-white">70%</span>
+        </div>
+
+        <div class="flex items-center gap-1">
+          <label for="" class="text-mercurial text-lg font-semibold">Mercurial:</label>
+          <input type="range" name="range" id=range class="MERCURIAL w-[40%]">
+          <span class="text-white">40%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    </div>
+</div>
+</div>
+
+</div>
+
+{% endblock content %}          
