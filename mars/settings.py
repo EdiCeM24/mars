@@ -50,14 +50,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'edibro.apps.EdibroConfig',
     
-    # 'django.contrib.sites',
+    #'django.contrib.sites',
     'allauth',
     'allauth.account',
     #Optional -- requires install using `django-allauth[socialaccount]`.
     'allauth.socialaccount',
 
     'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.github',
+    # 'allauth.socialaccount.providers.github',
 ]
 
 SITE_ID = 1
