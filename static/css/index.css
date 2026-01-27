@@ -388,6 +388,22 @@ a {
   font-family: serif;
   color: var(--color-white);
 }
+.icons-tl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.faqs-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+
 /** END OF ABOUT PAGE SECTION **/
 
 /** LOGIN PAGE SECTION **/

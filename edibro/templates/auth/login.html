@@ -24,7 +24,12 @@
             <div class="form-container">
               <div class="login-heading-text mt-4 mb-3">
                 <strong class="login-text text-lg fw-bold">Login Here</strong>
-              </div>
+              </div> 
+              <div class="signup-social-login">
+                {% load socialaccount %}
+                  <!-- <button onclick="window.location.href='{% provider_login_url 'google' %}' "><img src="{% static '/assets/google.png' %}" alt="" class="w-8 rounded-md"></button> -->
+                  <!-- <button><img src="{% static 'assets/github.png' %}" alt="" class="w-8 rounded-md"></button> -->
+              </div> 
               <form action="{%  url 'login' %}" method="POST" class="login-form">
                 {% csrf_token %}
                 <div class="mb-3">

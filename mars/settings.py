@@ -50,28 +50,29 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'edibro.apps.EdibroConfig',
     
+    # 'django.contrib.sites',
     'allauth',
     'allauth.account',
-    # Optional -- requires install using `django-allauth[socialaccount]`.
+    #Optional -- requires install using `django-allauth[socialaccount]`.
     'allauth.socialaccount',
 
-     'allauth.socialaccount.providers.google',
-     'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.github',
 ]
 
 SITE_ID = 1
 
-# Provider specific settings
+# # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         # For each OAuth based provider, either add a ``SocialApp``
         # (``socialaccount`` app) containing the required client
         # credentials, or list them here:
-        'APP': {
-            'client_id': '123',
-            'secret': '456',
-            'key': ''
-        }
+         'APP': {
+             'client_id': '123',
+             'secret': '456',
+             'key': ''
+            }
     }
 }
 
@@ -206,8 +207,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/'
 MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
 
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'login'
+# LOGIN_REDIRECT_URL = '/'
+# LOGOUT_REDIRECT_URL = 'login'
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
