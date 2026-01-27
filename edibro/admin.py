@@ -22,13 +22,9 @@ class userTestimonialAdmin(admin.ModelAdmin):
 
 
 
-admin.site.register(UserProfile, UserProfileAdmin)
-
 admin.site.register(Contact, ContactAdmin)
 
 admin.site.register(PasswordReset, PasswordResetAdmin)
-
-admin.site.register(Product, ProductAdmin)
 
 admin.site.register(userTestimonial, userTestimonialAdmin)
 

@@ -17,7 +17,7 @@ from django.contrib.auth import get_user_model
 
 
 class PhoneValidator(RegexValidator):
-    regex = r'^\d{15}$'
+    regex = r'^\d{17}$'
     message = 'Invalid phone number'
 
 class ContactForm(forms.ModelForm):

@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 import os
 
+import dj_database_url
+
+from decouple import config
+
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -31,8 +35,8 @@ SECRET_KEY = str(os.getenv('DJANGO_SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = str(os.getenv('DJANGO_DEBUG'))
 
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',')
-ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS if host.strip()]
+# ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = config('DJANGO_ALLOWED_HOSTS').split(',')
 
 
 # Application definition
@@ -126,9 +130,11 @@ DATABASES = {
         'USER': str(os.getenv('DB_USER')),
         'PASSWORD': str(os.getenv('DB_PASSWORD')),
         'HOST': str(os.getenv('DB_HOST')),  
-        'PORT': int(os.getenv('DB_PORT')),
+        'PORT': str(os.getenv('DB_PORT')),
     }
 }
+
+DATABASES['default'] = dj_database_url.parse(config("DATABASE_URL"))
 
 # DATABASES = {
 #     'default': {
