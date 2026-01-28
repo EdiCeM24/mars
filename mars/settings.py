@@ -69,8 +69,8 @@ SOCIALACCOUNT_PROVIDERS = {
         # (``socialaccount`` app) containing the required client
         # credentials, or list them here:
          'APP': {
-             'client_id': '123',
-             'secret': '456',
+             'client_id': str(os.getenv('OAUTH_GOOGLE_CLIENT_ID')),
+             'secret': str(os.getenv('OAUTH_GOOGLE_CLIENT_SECRET')),
              'key': ''
             }
     }
