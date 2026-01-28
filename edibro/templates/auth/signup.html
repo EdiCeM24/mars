@@ -27,6 +27,7 @@
                 {% endif %}   
               </div>   
             </div>
+            <p>{{ custom_message }}</p>
           <form action="{% url 'signup' %}" method="POST" class="signup-form">
             {% csrf_token %}
             <div class="form-control-input">

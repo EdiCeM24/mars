@@ -207,8 +207,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/'
 MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
 
-# LOGIN_REDIRECT_URL = '/'
-# LOGOUT_REDIRECT_URL = 'login'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = 'login'
+EMAIL_VERIFICATION='optional'
+
+ACCOUNT_SIGNUP_CLASS = 'core.forms.CustomSignupForm'
 
 # Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

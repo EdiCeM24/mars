@@ -20,7 +20,31 @@ from django.core.exceptions import ValidationError
 from django.core.validators import RegexValidator
 from django.conf import settings
 from django.contrib.auth import authenticate, login as auth_login, logout
-#from blogs.models import UserProfile
+from  allauth.account.views import SignupView
+from allauth.account import app_settings
+
+
+class CustomSignupView(SignupView):
+    def get_context_data(self, **kwargs):
+      context = super().get_context_data(**kwargs)
+      context['custom_message'] = 'Create an Account'
+      return context
+
+    def form_valid(self, form):
+      #here you can add custom logic before saving
+      response = super().form_valid(form)
+
+      if app_settings.EMAIL_VERIFICATION == app_settings.EmailVerificationMethod.MANDATORY:
+        messages.info(
+          self.request, 
+          "Please verify your email address to complete the registration."
+        )
+      else:
+        messages.success(
+          self.request,
+          f"Welcome {form.cleaned_data['username']}! Your Account created successfully."
+        )  
+      return response
 
 
 @login_required(login_url='login')

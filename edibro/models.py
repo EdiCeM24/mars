@@ -1,3 +1,4 @@
+from enum import Enum
 from django.db import models
 from django.db.utils import DatabaseError
 from django.db import connection
@@ -6,8 +7,11 @@ from django.core.validators import RegexValidator, EmailValidator, MinLengthVali
 from django.contrib.auth.models import User      # this is the default user model or a single user model
 from django.contrib.auth import get_user_model   # this is the current user model
 import uuid
+from typing import FrozenSet, Set, Union
+import warnings
 from phonenumber_field.modelfields import PhoneNumberField
 from django.core.validators import RegexValidator, EmailValidator, MinLengthValidator, MaxValueValidator
+
 
 class Contact(models.Model):
     first_name = models.CharField(max_length=100, validators=[MinLengthValidator(3), MaxValueValidator(100)], blank=True, null=True)
@@ -46,6 +50,19 @@ class userTestimonial(models.Model):
     def __str__(self):
         return self.name    
 
+class AppStrings:
+    class AuthenticationMethod(str, Enum):
+        USERNAME = "username"
+        EMAIL = "email"
+        USERNAME_EMAIL = "username_email"
 
+    class LoginMethod(str, Enum):
+        USERNAME = "username"
+        EMAIL = "email"
+        SOCIAL = "social"
+        PHONE = "phone"
 
-
+    class EmailVerificationMethod(str, Enum):
+        MADATORY = "mandatory"
+        OPTIONAL = "optional"
+        NONE = "none"    
