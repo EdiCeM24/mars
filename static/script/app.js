@@ -1,7 +1,7 @@
 // Typed Text
 const containerTyped = document.querySelector('.textTyped');
 
-const skills = ["Web developer", "Web designer", "Graphic Designer", "Freelancer", "Instructor"];
+const skills = ["Web developer", "Mobile App Developer", "CCTV Installer", "Freelancer", "Instructor"];
 let index = 0;
 
 let characterIndex = 0;
