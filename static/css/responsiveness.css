@@ -28,9 +28,9 @@
   .photo {
     position: relative;
     margin-top: 10%;
-    filter: grayscale(1);
+    filter: grayscale(0.5);
     object-fit: cover;
-    opacity: 0.5;
+    opacity: 1;
     transition: all .4s ease-in-out;
   }
   .photo img {
