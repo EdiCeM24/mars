@@ -263,6 +263,11 @@ def contact(request):
 
     return render(request, 'abc/contact.html') 
 
+def privacy(request):
+    return render(request, 'legal/privacy.html')
+
+def terms(request):
+    return render(request, 'legal/terms.html')
 
 def logoutView(request):
     logout(request)

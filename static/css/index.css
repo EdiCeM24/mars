@@ -596,7 +596,12 @@ a {
   gap: 1rem;
   width: 100%;
 }
-
+.terms-signup-popup {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+}
 /** END OF SIGNUP PAGE SECTION **/
 
 

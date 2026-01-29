@@ -22,6 +22,14 @@ urlpatterns = [
     views.loginView,
     name='login'
   ),
+  path('privacy',
+    views.privacy,
+    name='privacy'
+  ),
+  path('terms',
+    views.terms,
+    name='terms'
+  ),
 
   path(
     'logout',
