@@ -28,6 +28,10 @@
   .photo {
     position: relative;
     margin-top: 10%;
+    filter: grayscale(1);
+    object-fit: cover;
+    opacity: 0.5;
+    transition: all .4s ease-in-out;
   }
   .photo img {
     width: 100%;
@@ -38,6 +42,10 @@
     margin-top: 58%;
     margin-left: -5%;
     top: 10%;
+  }
+  .photo img:hover {
+    filter: grayscale(0);
+    opacity: 1;
   }
   .right-side {
     display: flex;
