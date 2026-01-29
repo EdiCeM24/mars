@@ -602,6 +602,16 @@ a {
   z-index: 1;
   left: 50%;
 }
+.terms-con-link, .privacy-con-link {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: serif;
+  text-decoration: none;
+}
+.terms-con-link:hover, .privacy-con-link:hover {
+  text-decoration: underline;
+  transition: all .2s ease-in-out;
+}
 /** END OF SIGNUP PAGE SECTION **/
 
 
