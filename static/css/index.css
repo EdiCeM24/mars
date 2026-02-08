@@ -394,6 +394,10 @@ a {
   justify-content: center;
   gap: 2rem;
 }
+.overlay {
+  position: relative;
+  display: inline-block;
+}
 .faqs-container {
   flex: 1;
   display: flex;
@@ -402,6 +406,40 @@ a {
   flex-direction: column;
   margin-top: 1%;
   margin-bottom: 2%;
+}
+
+.photo-social {
+  display: flex;
+  align-self: start;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  transform: translateX(-50%);
+  top: 10%;
+  bottom: 0;
+  left: 0%;
+  right: 0;
+  margin-top: -50%;
+  position: absolute;
+  transition: opacity 0.4s ease-in-out;
+  background-color: var(--color-secondary);
+  width: 20%;
+  border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  opacity: 0;
+}
+.photo-social a {
+  text-decoration: none;
+  color: var(--color-white);
+  font-size: 12px;
+  font-weight: 600;
+}
+.overlay:hover .photo-social {
+  opacity: 1;
+  background-color: var(--color-secondary);
+  transition: all .4s ease-in-out;
+  transform: translateX(100%) scaleX(1);
+  width: 20%;
 }
 
 /** END OF ABOUT PAGE SECTION **/
