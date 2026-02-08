@@ -441,7 +441,11 @@ a {
   transform: translateX(100%) scaleX(1);
   width: 20%;
 }
-
+.testimonies h3 h5 p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: aqua;
+  }
 /** END OF ABOUT PAGE SECTION **/
 
 /** LOGIN PAGE SECTION **/
