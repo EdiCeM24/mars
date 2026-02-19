@@ -16,13 +16,13 @@ from django.core.validators import RegexValidator, EmailValidator, MinLengthVali
 class Contact(models.Model):
     first_name = models.CharField(max_length=100, validators=[MinLengthValidator(3), MaxValueValidator(100)], blank=True, null=True)
     last_name = models.CharField(max_length=100, validators=[MinLengthValidator(3), MaxValueValidator(100)], blank=True, null=True)
-    email = models.EmailField(max_length=30, unique=True)
+    email = models.EmailField(max_length=60, unique=True)
     phone_regex = RegexValidator(regex=r'^\+?1?\d{9, 18}$', message="Phone number must be entered in the format: '+234 803 099 9999'. Up to 15 digits is allowed.")
     phone_number = PhoneNumberField(validators=[phone_regex], max_length=17, blank=False)
     website = models.URLField(max_length=100, blank=True, null=True)
     company_name = models.CharField(max_length=255, blank=True, null=True)
-    subject = models.CharField(max_length=50, validators=[MinLengthValidator(5), MaxValueValidator(50)])
-    message = models.TextField(validators=[MinLengthValidator(3), MaxValueValidator(300)])
+    subject = models.CharField(max_length=100, validators=[MinLengthValidator(5), MaxValueValidator(100)])
+    message = models.TextField(validators=[MinLengthValidator(3), MaxValueValidator(500)])
 
     def __str__(self):
         return self.first_name
