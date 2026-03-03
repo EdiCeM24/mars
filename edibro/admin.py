@@ -18,7 +18,8 @@ class UserProfileAdmin(admin.ModelAdmin):
 class userTestimonialAdmin(admin.ModelAdmin):
     list_display = ('image', 'name', 'designation', 'message')    
 
-
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ('user', 'phone_number', 'address', 'city', 'zip_code', 'date_of_birth', 'gender', 'profile_picture', 'bio', 'website')
 
 
 
@@ -27,4 +28,6 @@ admin.site.register(Contact, ContactAdmin)
 admin.site.register(PasswordReset, PasswordResetAdmin)
 
 admin.site.register(userTestimonial, userTestimonialAdmin)
+
+admin.site.register(UserProfile, UserProfileAdmin)
 

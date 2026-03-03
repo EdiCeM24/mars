@@ -36,8 +36,40 @@ class PasswordReset(models.Model):
     def __str__(self):
         return f"Password reset for {self.user.username} at {self.created_when}"
 
+CATEGORY_CHOICES = (
+    ('Web Development', 'Web Development'),
+    ('Mobile App Development', 'Mobile App Development'),
+    ('Data Science', 'Data Science'),
+    ('Machine Learning', 'Machine Learning'),
+    ('Artificial Intelligence', 'Artificial Intelligence'),
+    ('Cloud Computing', 'Cloud Computing'),
+    ('Cybersecurity', 'Cybersecurity'),
+    ('DevOps', 'DevOps'),
+    ('UI/UX Design', 'UI/UX Design'),
+    ('Game Development', 'Game Development'),
+    ('Blockchain', 'Blockchain'),
+    ('IoT', 'IoT'),
+    ('Other', 'Other'),
+)
 
-  
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    phone_regex = RegexValidator(regex=r'^\+?234?\d{9, 15}$', message="Phone number must be entered in the format: '+2348030999999'. Up to 15 digits is allowed.")
+    phone_number = PhoneNumberField(validators=[phone_regex], max_length=15, blank=True, null=True)
+    address = models.CharField(max_length=255, blank=True, null=True)
+    city = models.CharField(max_length=100, blank=True, null=True)
+    zip_code = models.CharField(max_length=10, blank=True, null=True)
+    date_of_birth = models.DateField(blank=True, null=True)
+    gender = models.CharField(max_length=10, blank=True, null=True)
+    profile_picture = models.ImageField(upload_to='images', blank=True, null=True)
+    website = models.URLField(max_length=100, blank=True, null=True)
+    bio = models.TextField(blank=True, null=True)
+    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, blank=True, null=True)
+    is_active = models.BooleanField(default=True)
+    is_admin = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return self.user.username
 
 
 
