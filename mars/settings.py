@@ -213,13 +213,21 @@ EMAIL_VERIFICATION='optional'
 
 ACCOUNT_SIGNUP_CLASS = 'core.forms.CustomSignupForm'
 
-# Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'live.smtp.mailtrap.io'
 EMAIL_PORT = 587
+EMAIL_HOST_USER = 'programmingwithedimars@gmail.com'
+EMAIL_HOST_PASSWORD = str(os.getenv('MY_EMAIL_PASSWORD'))
+ADMIN_EMAIL = 'www.marsbro.com'
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+EMAIL_USE_SSL = False
+
+ANYMAIL = {
+  "MAILTRAP_API_TOKEN": str(os.getenv('MAILTRAP_API_TOKEN')),
+}
+EMAIL_BACKEND = "anymail.backends.mailtrap.EmailBackend"
+DEFAULT_FROM_EMAIL = "hello@demomailtrap.co"
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/6.0/ref/settings/#default-auto-field

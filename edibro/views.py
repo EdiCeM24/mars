@@ -125,17 +125,27 @@ def ForgotPassword(request):
             full_password_reset_url = f"{request.build_absolute_uri(password_reset_url)}"
             email_body = f'Reset your password using the link below:\n\n\n{full_password_reset_url}'   # we replace password_reset_url with full_password_reset_url to generate absolute url.
             
+            subject = 'You are awesome!',
+            message = 'Congrats for sending password reset message email with Mailtrap!',
+            from_email = 'programmingwithedimars@gmail.com',
+            recipient_list = ['*']
+
+            send_mail(subject, message, from_email, recipient_list)
+             
+
             email_message = EmailMessage(
-                'Reset your password',
-                email_body,
-                settings.EMAIL_HOST_USER,      # Email sender
-                [email]   # Email receiver
+              'Reset your password',
+              email_body,
+              settings.EMAIL_HOST_USER,      # Email sender
+              [email],   # Email receiver
+                 
             )  
+            
             
             email_message.fail_silently = True
             email_message.send()
             
-            return redirect('password-reset-sent', reset_id=new_password_reset.reset_id)
+            return redirect('password-reset-sent', {'message': 'Email sent successfully!'}, reset_id=new_password_reset.reset_id)
                 
             
         except User.DoesNotExist:
@@ -248,7 +258,6 @@ def contact(request):
         contacts.company_name = company_name
         contacts.website = website
         contacts.message = message
-
       
         messages.success(request, 'Your message has been submitted successfully. Thanks!')
         contacts.save()  # The error for contact page when submitted is pointed here.
