@@ -25,10 +25,10 @@
               <div class="login-heading-text mt-4 mb-3">
                 <strong class="login-text text-lg fw-bold">Login Here</strong>
               </div> 
-              
               <form action="{%  url 'login' %}" method="POST" class="login-form">
                 {% csrf_token %}
                 <div class="mb-3">
+                  
                   <label for="username" class="form-label text-xl fs-6 fw-bold">Username:</label>
                   <input type="text" class="form-control" id="username" name="username" required autocomplete="off">
                 </div>

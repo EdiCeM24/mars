@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'edibro.apps.EdibroConfig',
-    
+    'phonenumber_field',
     #'django.contrib.sites',
     'allauth',
     'allauth.account',
